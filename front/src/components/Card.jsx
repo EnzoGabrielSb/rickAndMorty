@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { addFavorite, deleteFav } from "../redux/actions";
+import "../components/Card.css";
 
 export default function Card({ name, gender, onClose, species, image, id }) {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ export default function Card({ name, gender, onClose, species, image, id }) {
   const handleFavorite = () => {
     if (isFav) {
       setIsFav(false);
-      dispatchEvent(deleteFav(id));
+      dispatch(deleteFav(id));
     } else {
       setIsFav(true);
       dispatch(addFavorite({ name, gender, onClose, species, image, id }));
@@ -27,21 +28,28 @@ export default function Card({ name, gender, onClose, species, image, id }) {
   }, [myFavorites]);
 
   return (
-    <div>
+    <div class="conteiner">
       <div>
         {isFav ? (
-          <button onClick={handleFavorite}>❤️</button>
+          <button class="button" onClick={handleFavorite}>
+            ❤️
+          </button>
         ) : (
-          <button onClick={handleFavorite}>🤍</button>
+          <button class="button" onClick={handleFavorite}>
+            🤍
+          </button>
         )}
       </div>
 
-      <button onClick={onClose}>X</button>
+      <button class="buttonX" onClick={onClose}>
+        X
+      </button>
       <Link to={`/detail/${id}`}>
         <h2>{name}</h2>
       </Link>
-      <h2>{species}</h2>
-      <h2>{gender}</h2>
+      <h2>ID:{typeof id}</h2>
+      <h2>Especie: {species}</h2>
+      <h2>Genero: {gender}</h2>
       <img src={image} alt={name} />
     </div>
   );

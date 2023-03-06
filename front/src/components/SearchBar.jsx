@@ -1,5 +1,6 @@
 import Nav from "./Nav";
 import { useState } from "react";
+import "./SearchBar.css";
 
 function SearchBar({ onSearch }) {
   const [character, setCharacters] = useState("");
@@ -9,9 +10,17 @@ function SearchBar({ onSearch }) {
   };
 
   return (
-    <div>
-      <input type="search" value={character} onChange={handleChange} />
-      <button onClick={() => onSearch(character)}>Agregar</button>
+    <div class="input-group">
+      <input
+        type="search"
+        value={character}
+        onChange={handleChange}
+        class="input"
+        placeholder="Agrega Id del Personaje"
+      />
+      <button class="button--submit" onClick={() => onSearch(character)}>
+        Agregar
+      </button>
     </div>
   );
 }

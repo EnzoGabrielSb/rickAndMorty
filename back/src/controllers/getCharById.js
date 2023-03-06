@@ -19,4 +19,4 @@ const getCharByid = (res, id) => {
     );
 };
 
-module.exports = getCharByid;
+module.export = getCharByid;

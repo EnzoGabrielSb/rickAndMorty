@@ -5,16 +5,16 @@ function Cards({ characters, onClose }) {
 
   return (
     <div>
-      {characters.map((character) => {
+      {characters.map(({ id, name, species, gender, image }) => {
         return (
           <Card
-            key={character.id}
-            name={character.name}
-            species={character.species}
-            gender={character.gender}
-            image={character.image}
-            id={character.id}
-            onClose={() => onClose(character.id)}
+            key={id}
+            name={name}
+            species={species}
+            gender={gender}
+            image={image}
+            id={id}
+            onClose={() => onClose(id)}
           />
         );
       })}

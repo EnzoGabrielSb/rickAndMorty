@@ -1,4 +1,4 @@
-import "./App.css";
+import style from "./App.css";
 import Cards from "./components/Cards.jsx";
 import Nav from "./components/Nav";
 import About from "./components/About";
@@ -46,7 +46,15 @@ function App() {
   };
 
   return (
-    <div className="App" style={{ padding: "25px" }}>
+    <div
+      className="App"
+      style={{
+        padding: "290px",
+        backgroundSize: "cover",
+        backgroundPosition: "center center",
+        backgrounRepeat: "no-repeat",
+      }}
+    >
       {location.pathname === "/" ? (
         <Form login={login} />
       ) : (
@@ -58,9 +66,9 @@ function App() {
           path="home"
           element={<Cards onClose={onClose} characters={characters} />}
         />
-        <Route path="/about" element={<About />} />
+        <Route path="about" element={<About />} />
         <Route path="detail/:detailId" element={<Detail />} />
-        <Route path="/favorites" element={<Favorites />} />
+        <Route path="favorites" element={<Favorites />} />
       </Routes>
     </div>
   );

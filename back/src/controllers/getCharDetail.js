@@ -11,6 +11,7 @@ const getCharDetail = (res, id) => {
         species: data.species,
         origin: data.origin.name,
         status: data.status,
+        id: data.id,
       };
       res
         .writeHead(200, { "Content-type": "application/json" })

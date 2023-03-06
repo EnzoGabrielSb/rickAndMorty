@@ -1,0 +1,29 @@
+.links {
+  background-color: #171717;
+  transition: 0.4s ease-in-out;
+  height: 120px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 45px;
+  justify-content: space-evenly;
+}
+
+.links:hover {
+  transform: scale(1.05);
+  border: 2.5px solid greenyellow;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.link:hover {
+  transform: scale(1.05);
+  border: 2.5px solid greenyellow;
+}
