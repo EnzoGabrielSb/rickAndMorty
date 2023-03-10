@@ -10,4 +10,4 @@ hacer la pagina funcional. Volvi a conectar a la API externa para que la pagina 
 
 Mi intencion es despues de esto terminarla porque seria una lastima que quede cerca de terminar!
 
-Gracia ♥
+Gracias ♥
