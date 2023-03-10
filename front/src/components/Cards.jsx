@@ -3,8 +3,10 @@ import Card from "./Card";
 function Cards({ characters, onClose }) {
   // [ {...}, {...} ]
 
+  console.log(characters);
+
   return (
-    <div>
+    <div key="cards-container">
       {characters.map(({ id, name, species, gender, image }) => {
         return (
           <Card

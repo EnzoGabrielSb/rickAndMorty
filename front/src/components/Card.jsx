@@ -27,6 +27,8 @@ export default function Card({ name, gender, onClose, species, image, id }) {
     });
   }, [myFavorites]);
 
+  console.log("Card:", id);
+
   return (
     <div class="conteiner">
       <div>
@@ -47,7 +49,7 @@ export default function Card({ name, gender, onClose, species, image, id }) {
       <Link to={`/detail/${id}`}>
         <h2>{name}</h2>
       </Link>
-      <h2>ID:{typeof id}</h2>
+
       <h2>Especie: {species}</h2>
       <h2>Genero: {gender}</h2>
       <img src={image} alt={name} />

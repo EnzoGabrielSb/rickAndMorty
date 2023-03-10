@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "../components/Detail.css";
 
 const Detail = () => {
   //Tomo el ID de cada personaje usando useParams.
   const { detailId } = useParams();
+  console.log("Detail:", detailId);
 
   const [character, setCharacter] = useState({});
 
@@ -27,14 +29,18 @@ const Detail = () => {
         <button>HOME</button>
       </Link>
 
-      <h1>Detalles:</h1>
-      <h2>{character?.id}</h2>
-      <h2>{character?.name}</h2>
-      <h2>{character?.status}</h2>
-      <h2>{character?.species}</h2>
-      <h2>{character?.gender}</h2>
+      <div class="conteinerDetail">
+        <h1>Details:</h1>
 
-      <img src={character?.image} alt={character?.name} />
+        <h2>Name: {character?.name}</h2>
+        <h2>Status: {character?.status}</h2>
+        <h2>Specie:{character?.species}</h2>
+
+        <h2>Gender: {character?.gender}</h2>
+        <h2>Id: {character?.id}</h2>
+
+        <img src={character?.image} alt={character?.name} />
+      </div>
     </div>
   );
 };

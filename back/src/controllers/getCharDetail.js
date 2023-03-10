@@ -1,3 +1,4 @@
+/*
 const axios = require("axios");
 
 const getCharDetail = (res, id) => {
@@ -5,6 +6,7 @@ const getCharDetail = (res, id) => {
     .then((response) => response.data)
     .then((data) => {
       let char = {
+        key: data.id,
         name: data.name,
         image: data.image,
         gender: data.gender,
@@ -21,4 +23,5 @@ const getCharDetail = (res, id) => {
     .end("No se pudo obtener el personaje esperado.");
 };
 
-module.export = getCharDetail;
+module.exports = getCharDetail;
+*/

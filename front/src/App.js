@@ -30,13 +30,13 @@ function App() {
   }, [access]);
 
   const onSearch = (character) => {
-    fetch(`http://localhost:3001/rickandmorty/character/onsearch/${character}`)
+    fetch(`https://rickandmortyapi.com/api/character/${character}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.name) {
           setCharacters((oldChars) => [...oldChars, data]);
         } else {
-          window.alert("No hay personajes con ese ID");
+          alert("No hay personajes con ese ID");
         }
       });
   };
@@ -63,12 +63,12 @@ function App() {
 
       <Routes>
         <Route
-          path="home"
+          path="/home"
           element={<Cards onClose={onClose} characters={characters} />}
         />
-        <Route path="about" element={<About />} />
-        <Route path="detail/:detailId" element={<Detail />} />
-        <Route path="favorites" element={<Favorites />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/detail/:detailId" element={<Detail />} />
+        <Route path="/favorites" element={<Favorites />} />
       </Routes>
     </div>
   );
